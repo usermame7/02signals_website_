@@ -31,7 +31,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 text-gradient tracking-tight leading-tight bg-[#e6e8edd4]">FREE Gold Signals</h1>
 
           {/* Subtitle */}
-          <h2 className="text-lg md:text-xl max-w-3xl mx-auto mb-6 bg-[#00000000] text-[#ffffff] font-bold">Daily analysis, risk notes, and educational trade ideas to help you understand market movements</h2>
+          <h2 className="text-lg md:text-xl max-w-3xl mx-auto mb-6 bg-[#00000000] text-[#ffffff] font-bold">97% Success Rate • Professional Trading Team • Daily Accurate Signals</h2>
           
 
           
