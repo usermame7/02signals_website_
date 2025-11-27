@@ -22,12 +22,12 @@ export default function Header() {
           : 'bg-vpfx-bg/40 backdrop-blur-xl border-b border-white/5'
       }`}
     >
-      <div className="container mx-auto px-6 py-5">
-        <nav className="flex items-center justify-between gap-5 flex-wrap">
+      <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-5">
+        <nav className="flex items-center justify-between gap-3 sm:gap-5 flex-wrap">
           {/* Brand */}
-          <div className="flex items-center gap-3.5 font-black text-lg tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 font-black text-base sm:text-lg tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
             <div className="relative">
-              <div className="w-11 h-11 rounded-xl overflow-hidden shadow-lg transition-all duration-300 halo-soft border border-white/10">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden shadow-lg transition-all duration-300 halo-soft border border-white/10">
                 <img 
                   src={logoImage}
                   alt="VictoryPipsFX logo"
@@ -42,7 +42,7 @@ export default function Header() {
           </div>
 
           {/* Navigation Menu */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-5 lg:gap-7">
             <a 
               href="/join"
               className="text-vpfx-text hover:text-vpfx-accent font-semibold transition-all duration-300 hover:scale-105"
