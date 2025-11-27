@@ -18,16 +18,16 @@ export default function Header() {
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass border-b border-vpfx-accent/20' 
+          ? 'translucent-base border-b border-vpfx-accent/20' 
           : 'bg-vpfx-bg/40 backdrop-blur-xl border-b border-white/5'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-4.5">
         <nav className="flex items-center justify-between gap-5 flex-wrap">
           {/* Brand */}
-          <div className="flex items-center gap-3 font-black text-lg tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
+          <div className="flex items-center gap-3.5 font-black text-lg tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-glow border border-white/10">
+              <div className="w-11 h-11 rounded-xl overflow-hidden shadow-lg transition-all duration-300 halo-soft border border-white/10">
                 <img 
                   src={logoImage}
                   alt="VictoryPipsFX logo"
@@ -41,35 +41,35 @@ export default function Header() {
           </div>
 
           {/* Navigation Menu */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-7">
             <a 
               href="/join"
               className="text-vpfx-text hover:text-vpfx-accent font-semibold transition-all duration-300 hover:scale-105"
             >
-              Courses
+              Training Programs
             </a>
             <a 
               href="/join"
               className="text-vpfx-text hover:text-vpfx-accent font-semibold transition-all duration-300 hover:scale-105"
             >
-              Community Access
+              Platform Entry
             </a>
             <a 
               href="/join"
               className="text-vpfx-text hover:text-vpfx-accent font-semibold transition-all duration-300 hover:scale-105"
             >
-              Free Lessons
+              Complimentary Resources
             </a>
             <a 
               href="/contact"
               className="text-vpfx-text hover:text-vpfx-accent font-semibold transition-all duration-300 hover:scale-105"
             >
-              Contact Us
+              Reach Out
             </a>
           </div>
 
           {/* Mobile Menu + CTA Button */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3.5">
             <TelegramButton 
               href="/join"
               size="sm"

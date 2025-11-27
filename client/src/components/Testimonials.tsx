@@ -12,75 +12,73 @@ export default function Testimonials() {
     {
       id: 1,
       image: testimonial1Image,
-      result: "Member Learning Success",
-      feedback: "Fantastic! 👏",
-      description: "Educational content helping traders understand market movements"
+      result: "Community Participant Growth",
+      feedback: "Excellent learning experience! 👏",
+      description: "Study materials assisting participants in grasping price movements"
     },
     {
       id: 2,
       image: testimonial2Image,
-      result: "Learning Progress Update",
-      feedback: "Great progress this week... From here I can only learn more 💪 Excellent!!",
-      description: "Consistent educational content with market analysis insights. Results not typical."
+      result: "Development Milestone Report",
+      feedback: "Solid advancement recently... From this point I can only develop further 💪 Outstanding!!",
+      description: "Regular study materials with chart evaluation perspectives. Outcomes vary individually."
     },
     {
       id: 3,
       image: testimonial3Image,
-      result: "Beginner Learning Journey",
-      feedback: "Hi. I'm a newbie. This is week 3 for me",
-      description: "New traders learning market analysis through educational trade ideas. Results not typical."
+      result: "Novice Development Path",
+      feedback: "Hello. I'm starting out. This represents my third week",
+      description: "Fresh participants studying chart evaluation via learning resources. Outcomes vary individually."
     }
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div 
           ref={headerAnimation.ref}
-          className={`text-center mb-16 animate-fade-in-up ${headerAnimation.isVisible ? 'visible' : ''}`}
+          className={`text-center mb-18 reveal-from-below ${headerAnimation.isVisible ? 'visible' : ''}`}
         >
-          <h2 className="text-3xl md:text-5xl font-black mb-4 text-gradient">Member Learning Success</h2>
+          <h2 className="text-3xl md:text-5xl font-black mb-4.5 gradient-text-v1">Community Development Stories</h2>
           <p className="text-vpfx-muted text-lg max-w-2xl mx-auto">
-            Educational content helping traders make better decisions. Results not typical.
+            Learning materials supporting participants in informed choices. Outcomes vary individually.
           </p>
-          
-
         </div>
 
         {/* Testimonials Grid */}
         <div 
           ref={gridAnimation.ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-9 max-w-6xl mx-auto"
         >
           {testimonials.map((testimonial, index) => {
-            const animClasses = ['animate-fade-in-left', 'animate-scale-in', 'animate-fade-in-right'];
+            const animClasses = ['reveal-from-start', 'expand-reveal', 'reveal-from-end'];
             return (
             <div 
               key={testimonial.id}
-              className={`glass-card p-6 group hover:scale-105 transition-all duration-500 hover:shadow-glow ${animClasses[index]} ${gridAnimation.isVisible ? 'visible' : ''} animate-stagger-${index + 1}`}
+              className={`surface-panel-v2 p-7 group hover:scale-105 transition-all duration-500 halo-soft ${animClasses[index]} ${gridAnimation.isVisible ? 'visible' : ''} delay-cascade-${index + 1}`}
             >
               {/* Screenshot */}
-              <div className="mb-4 rounded-xl overflow-hidden shadow-lg">
+              <div className="mb-4.5 rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src={testimonial.image}
-                  alt={`Trading result: ${testimonial.result}`}
+                  alt={`Market outcome: ${testimonial.result}`}
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
               {/* Result Highlight */}
-              <div className="text-center mb-4">
-                <div className="text-2xl font-black text-vpfx-accent mb-2">
+              <div className="text-center mb-4.5">
+                <div className="text-2xl font-black text-vpfx-accent mb-2.5">
                   {testimonial.result}
                 </div>
                 <div className="text-vpfx-green1 font-bold text-sm">
-                  ✅ EDUCATIONAL COMMUNITY MEMBER
+                  ✅ LEARNING PLATFORM PARTICIPANT
                 </div>
               </div>
 
               {/* Member Feedback */}
-              <blockquote className="text-vpfx-text text-sm italic mb-4 border-l-4 border-vpfx-accent pl-4">
+              <blockquote className="text-vpfx-text text-sm italic mb-4.5 border-l-4 border-vpfx-accent pl-4.5">
                 "{testimonial.feedback}"
               </blockquote>
 
@@ -97,24 +95,24 @@ export default function Testimonials() {
         {/* Call to Action */}
         <div 
           ref={ctaAnimation.ref}
-          className={`text-center mt-16 animate-scale-in ${ctaAnimation.isVisible ? 'visible' : ''}`}
+          className={`text-center mt-18 expand-reveal ${ctaAnimation.isVisible ? 'visible' : ''}`}
         >
-          <div className="glass-card p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-black mb-4 text-vpfx-accent">
-              Ready to Start Learning?
+          <div className="surface-panel-v2 p-9 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-black mb-4.5 text-vpfx-accent">
+              Prepared to Begin Your Education?
             </h3>
-            <p className="text-vpfx-muted mb-6">
-              Join our free Telegram channel today for daily market insights. 
-              Educational content only. No guarantees.
+            <p className="text-vpfx-muted mb-7">
+              Access our complimentary messaging community now for regular intelligence. 
+              Study materials exclusively. No performance promises.
             </p>
             <a
               href="/join"
-              className="btn-gradient inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-black text-vpfx-bg transition-all duration-300 hover:-translate-y-1 hover:scale-105 animate-glow animate-auto-shake hover-shake"
+              className="cta-style-a1 inline-flex items-center gap-3.5 px-9 py-4.5 rounded-2xl font-black text-vpfx-bg transition-all duration-300 hover:-translate-y-1 hover:scale-105 illuminate-pulse periodic-quake interaction-quake"
             >
               <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M9.04 15.3l-.38 5.33c.54 0 .78-.23 1.06-.5l2.55-2.45 5.29 3.87c.97.53 1.67.25 1.94-.9l3.52-16.5h.01c.31-1.45-.52-2.02-1.45-1.67L1.1 9.46c-1.41.55-1.39 1.34-.24 1.7l5.1 1.59 11.85-7.48c.56-.34 1.06-.15.64.21L9.04 15.3z"/>
               </svg>
-              Join Free Education Channel
+              Access Learning Platform
             </a>
           </div>
         </div>
