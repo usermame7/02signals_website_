@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import HomePage from "@/pages/HomePage";
 import JoinPage from "@/pages/JoinPage";
+import ThankYouPage from "@/pages/ThankYouPage";
 import ContactPage from "@/pages/ContactPage";
 import DisclaimerPage from "@/pages/DisclaimerPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={HomePage} />
       <Route path="/join" component={JoinPage} />
+      <Route path="/thank-you" component={ThankYouPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/disclaimer" component={DisclaimerPage} />
       <Route path="/privacy" component={PrivacyPolicyPage} />

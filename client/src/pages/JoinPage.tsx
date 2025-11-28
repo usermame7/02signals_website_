@@ -1,35 +1,28 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function JoinPage() {
   const [countdown, setCountdown] = useState(3);
-  const telegramUrl = "https://t.me/+qyTeUgsGYGdhY2M8";
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
-    // Track the join page visit
+    // Track the redirect page visit with Google Analytics (NO Lead event here)
     if (typeof (window as any).gtag !== 'undefined') {
       (window as any).gtag('event', 'page_view', {
-        page_title: 'Join Telegram Group',
+        page_title: 'Join Redirect',
         page_location: window.location.href
-      });
-      
-      (window as any).gtag('event', 'telegram_join_redirect', {
-        event_category: 'engagement',
-        event_label: 'join_page_redirect'
       });
     }
 
-    // Track Meta Pixel Lead event (when user is about to join Telegram)
-    if (typeof (window as any).fbq !== 'undefined') {
-      (window as any).fbq('track', 'Lead');
-    }
+    // NO Lead event on this redirect page - Lead fires on /thank-you only
 
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          window.location.href = telegramUrl;
+          setLocation('/thank-you');
           return 0;
         }
         return prev - 1;
@@ -37,16 +30,10 @@ export default function JoinPage() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [setLocation]);
 
   const handleDirectRedirect = () => {
-    if (typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'manual_redirect_click', {
-        event_category: 'engagement',
-        event_label: 'join_manual_redirect'
-      });
-    }
-    window.location.href = telegramUrl;
+    setLocation('/thank-you');
   };
 
   return (
@@ -61,10 +48,10 @@ export default function JoinPage() {
         <div className="mb-6">
           <Loader2 className="h-12 w-12 text-cyan-400 animate-spin mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-white mb-2" data-testid="text-redirect-title">
-            Joining VictoryPipsFX
+            Welcome to VictoryPipsFX
           </h1>
           <p className="text-gray-300" data-testid="text-redirect-description">
-            You're being redirected to our Telegram community...
+            Preparing your access to our community...
           </p>
         </div>
 
@@ -73,7 +60,7 @@ export default function JoinPage() {
             {countdown}
           </div>
           <p className="text-sm text-gray-400">
-            Redirecting in {countdown} seconds
+            Please wait {countdown} seconds
           </p>
         </div>
 
@@ -82,11 +69,11 @@ export default function JoinPage() {
           className="w-full bg-cyan-600 hover:bg-cyan-700 text-white"
           data-testid="button-manual-redirect"
         >
-          Join Now - Don't Wait
+          Continue Now
         </Button>
 
         <p className="text-xs text-gray-500 mt-4">
-          If you're not redirected automatically, click the button above
+          Click the button to skip the wait
         </p>
       </div>
     </div>
